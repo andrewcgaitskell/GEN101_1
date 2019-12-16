@@ -1,0 +1,711 @@
+Last login: Mon Dec 16 11:05:51 on ttys001
+Andrews-MacBook-Air:~ andrewgaitskell$ python3
+Python 3.8.0 (v3.8.0:fa919fdf25, Oct 14 2019, 10:23:27) 
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
+Andrews-MacBook-Air:~ andrewgaitskell$ pip3
+
+Usage:   
+  pip3 <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  config                      Manage local and global configuration.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  debug                       Show information useful for debugging.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring
+                              environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be
+                              used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be
+                              used up to 3 times (corresponding to WARNING,
+                              ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form
+                              [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should
+                              attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists:
+                              (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does
+                              not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file
+                              containing the private key and the certificate
+                              in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine
+                              whether a new version of pip is available for
+                              download. Implied with --no-index.
+  --no-color                  Suppress colored output
+Andrews-MacBook-Air:~ andrewgaitskell$ ls
+Applications		JupyterConveyor.ipynb	Untitled.ipynb
+Code			Library			Untitled1.ipynb
+Creative Cloud Files	Movies			Untitled2.ipynb
+Desktop			Music			github
+Documents		Pictures		node_modules
+Downloads		Public			nodeupload
+FullDrawings.dxf	PycharmProjects		package-lock.json
+FullDrawings.dxf~	Read-LucResults.R	settings.js
+Google Drive		Software
+Andrews-MacBook-Air:~ andrewgaitskell$ mkdir platformio
+Andrews-MacBook-Air:~ andrewgaitskell$ cd platformio/
+Andrews-MacBook-Air:platformio andrewgaitskell$ python3 -m pip install --user --upgrade pip
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/00/b6/9cfa56b4081ad13874b0c6f96af8ce16cfbc1cb06bedf8e9164ce5551ec1/pip-19.3.1-py2.py3-none-any.whl (1.4MB)
+     |████████████████████████████████| 1.4MB 1.8MB/s 
+Installing collected packages: pip
+Successfully installed pip-19.3.1
+WARNING: You are using pip version 19.2.3, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Andrews-MacBook-Air:platformio andrewgaitskell$ python3 -m pip --version
+pip 19.3.1 from /Users/andrewgaitskell/Library/Python/3.8/lib/python/site-packages/pip (python 3.8)
+Andrews-MacBook-Air:platformio andrewgaitskell$ python3 -m pip install --user virtualenv
+Collecting virtualenv
+  Downloading https://files.pythonhosted.org/packages/05/f1/2e07e8ca50e047b9cc9ad56cf4291f4e041fa73207d000a095fe478abf84/virtualenv-16.7.9-py2.py3-none-any.whl (3.4MB)
+     |████████████████████████████████| 3.4MB 1.8MB/s 
+Installing collected packages: virtualenv
+  WARNING: The script virtualenv is installed in '/Users/andrewgaitskell/Library/Python/3.8/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed virtualenv-16.7.9
+Andrews-MacBook-Air:platformio andrewgaitskell$ nano ~/.profile
+Andrews-MacBook-Air:platformio andrewgaitskell$ pwd
+/Users/andrewgaitskell/platformio
+Andrews-MacBook-Air:platformio andrewgaitskell$ python3 -m venv env
+Andrews-MacBook-Air:platformio andrewgaitskell$ source env/bin/activate
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ which python
+/Users/andrewgaitskell/platformio/env/bin/python
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ whch pip
+-bash: whch: command not found
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ which pip
+/Users/andrewgaitskell/platformio/env/bin/pip
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ pip install -U platformio
+Collecting platformio
+  Downloading https://files.pythonhosted.org/packages/b5/b6/832b92113764feae278376dd0f39f0a3d4321c24b9ff1ff9c9777ba23b8d/platformio-4.1.0.tar.gz (157kB)
+     |████████████████████████████████| 163kB 1.8MB/s 
+Collecting bottle<0.13 (from platformio)
+  Downloading https://files.pythonhosted.org/packages/e9/39/2bf3a1fd963e749cdbe5036a184eda8c37d8af25d1297d94b8b7aeec17c4/bottle-0.12.18-py3-none-any.whl (89kB)
+     |████████████████████████████████| 92kB 13.0MB/s 
+Collecting click<8,>=5 (from platformio)
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+     |████████████████████████████████| 81kB 4.1MB/s 
+Collecting colorama (from platformio)
+  Downloading https://files.pythonhosted.org/packages/c9/dc/45cdef1b4d119eb96316b3117e6d5708a08029992b2fee2c143c7a0a5cc5/colorama-0.4.3-py2.py3-none-any.whl
+Collecting pyserial!=3.3,<4,>=3 (from platformio)
+  Downloading https://files.pythonhosted.org/packages/0d/e4/2a744dd9e3be04a0c0907414e2a01a7c88bb3915cbe3c8cc06e209f59c30/pyserial-3.4-py2.py3-none-any.whl (193kB)
+     |████████████████████████████████| 194kB 5.0MB/s 
+Collecting requests<3,>=2.4.0 (from platformio)
+  Downloading https://files.pythonhosted.org/packages/51/bd/23c926cd341ea6b7dd0b2a00aba99ae0f828be89d72b2190f27c11d4b7fb/requests-2.22.0-py2.py3-none-any.whl (57kB)
+     |████████████████████████████████| 61kB 12.2MB/s 
+Collecting semantic_version<3,>=2.8.1 (from platformio)
+  Downloading https://files.pythonhosted.org/packages/36/4a/c9f6e279dd1c7919ec1d63fc4b38e0aedd51f26f7232f0783489cf191247/semantic_version-2.8.3-py2.py3-none-any.whl
+Collecting tabulate<1,>=0.8.3 (from platformio)
+  Downloading https://files.pythonhosted.org/packages/c4/41/523f6a05e6dc3329a5660f6a81254c6cd87e5cfb5b7482bae3391d86ec3a/tabulate-0.8.6.tar.gz (45kB)
+     |████████████████████████████████| 51kB 11.9MB/s 
+Collecting pyelftools<1,>=0.25 (from platformio)
+  Downloading https://files.pythonhosted.org/packages/bb/2f/bf41f3c3867d6707fa9b872658bb23088a64d0e522e8979f54c694b8cbe1/pyelftools-0.26-py2.py3-none-any.whl (136kB)
+     |████████████████████████████████| 143kB 4.8MB/s 
+Collecting marshmallow<3,>=2.20.5 (from platformio)
+  Downloading https://files.pythonhosted.org/packages/e3/07/c7a12d21619abeedf5fca7381f4cf3fa798a26e8d92ad66bc73f5fc58fc1/marshmallow-2.20.5-py2.py3-none-any.whl (50kB)
+     |████████████████████████████████| 51kB 10.6MB/s 
+Collecting chardet<3.1.0,>=3.0.2 (from requests<3,>=2.4.0->platformio)
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+     |████████████████████████████████| 143kB 4.6MB/s 
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 (from requests<3,>=2.4.0->platformio)
+  Downloading https://files.pythonhosted.org/packages/b4/40/a9837291310ee1ccc242ceb6ebfd9eb21539649f193a7c8c86ba15b98539/urllib3-1.25.7-py2.py3-none-any.whl (125kB)
+     |████████████████████████████████| 133kB 4.7MB/s 
+Collecting certifi>=2017.4.17 (from requests<3,>=2.4.0->platformio)
+  Using cached https://files.pythonhosted.org/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl
+Collecting idna<2.9,>=2.5 (from requests<3,>=2.4.0->platformio)
+  Downloading https://files.pythonhosted.org/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58kB)
+     |████████████████████████████████| 61kB 11.5MB/s 
+Installing collected packages: bottle, click, colorama, pyserial, chardet, urllib3, certifi, idna, requests, semantic-version, tabulate, pyelftools, marshmallow, platformio
+  Running setup.py install for tabulate ... done
+  Running setup.py install for platformio ... done
+Successfully installed bottle-0.12.18 certifi-2019.11.28 chardet-3.0.4 click-7.0 colorama-0.4.3 idna-2.8 marshmallow-2.20.5 platformio-4.1.0 pyelftools-0.26 pyserial-3.4 requests-2.22.0 semantic-version-2.8.3 tabulate-0.8.6 urllib3-1.25.7
+WARNING: You are using pip version 19.2.3, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ pip --version
+pip 19.2.3 from /Users/andrewgaitskell/platformio/env/lib/python3.8/site-packages/pip (python 3.8)
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ pip freeze
+bottle==0.12.18
+certifi==2019.11.28
+chardet==3.0.4
+Click==7.0
+colorama==0.4.3
+idna==2.8
+marshmallow==2.20.5
+platformio==4.1.0
+pyelftools==0.26
+pyserial==3.4
+requests==2.22.0
+semantic-version==2.8.3
+tabulate==0.8.6
+urllib3==1.25.7
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ platformio
+Usage: platformio [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --version          Show the version and exit.
+  -f, --force        DEPRECATE
+  -c, --caller TEXT  Caller ID (service)
+  --no-ansi          Do not print ANSI control characters
+  -h, --help         Show this message and exit.
+
+Commands:
+  account   Manage PIO Account
+  boards    Embedded Board Explorer
+  check     Run a static analysis tool on code
+  ci        Continuous Integration
+  debug     PIO Unified Debugger
+  device    Monitor device or list existing
+  home      PIO Home
+  init      Initialize PlatformIO project or update existing
+  lib       Library Manager
+  platform  Platform Manager
+  remote    PIO Remote
+  run       Process project environments
+  settings  Manage PlatformIO settings
+  test      Unit Testing
+  update    Update installed platforms, packages and libraries
+  upgrade   Upgrade PlatformIO to the latest version
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ git clone https://github.com/andrewcgaitskell/GEN101_1.git
+Cloning into 'GEN101_1'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 19 (delta 3), reused 10 (delta 0), pack-reused 0
+Unpacking objects: 100% (19/19), done.
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ platformio run --target upload
+********************************************************************************
+If you like PlatformIO, please:
+- follow us on Twitter to stay up-to-date on the latest project news > https://twitter.com/PlatformIO_Org
+- star it on GitHub > https://github.com/platformio/platformio
+- try PlatformIO IDE for embedded development > https://platformio.org/platformio-ide
+- support us with PlatformIO Plus > https://pioplus.com
+********************************************************************************
+
+Error: Not a PlatformIO project. `platformio.ini` file has not been found in current working directory (/Users/andrewgaitskell/platformio/platformio.ini). To initialize new project please use `platformio init` command
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ ls
+GEN101_1	env
+(env) Andrews-MacBook-Air:platformio andrewgaitskell$ cd GEN101_1/
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --target upload
+Processing genuino101 (platform: intel_arc32; board: genuino101; framework: arduino)
+--------------------------------------------------------------------------------
+PlatformManager: Installing intel_arc32
+intel_arc32 @ 1.2.4 has been successfully installed!
+The platform 'intel_arc32' has been successfully installed!
+The rest of packages will be installed automatically depending on your build environment.
+PackageManager: Installing toolchain-intelarc32 @ >=1.40802.0,<1.40806.0
+Downloading  [####################################]  100%          
+Unpacking  [####################################]  100%          
+toolchain-intelarc32 @ 1.40805.0 has been successfully installed!
+PackageManager: Installing framework-arduinointel @ ~1.20002.0
+Unpacking  [####################################]  100%
+framework-arduinointel @ 1.20002.0 has been successfully installed!
+PackageManager: Installing tool-arduino101load @ ~1.201.0
+tool-arduino101load @ 1.201.0 has been successfully installed!
+CorePackageManager: Installing tool-scons @ ~3.30101.0
+Unpacking  [####################################]  100%
+tool-scons @ 3.30101.0 has been successfully installed!
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/intel_arc32/genuino101.html
+PLATFORM: Intel ARC32 1.2.4 > Arduino/Genuino 101
+HARDWARE: ARCV2EM 32MHz, 80KB RAM, 152KB Flash
+PACKAGES: toolchain-intelarc32 1.40805.0 (4.8.5), framework-arduinointel 1.20002.0 (2.0.2), tool-arduino101load 1.201.0 (2.1)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 12 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Compiling .pio/build/genuino101/src/main.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduinoVariant/variant.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/CDCSerialClass.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/IPAddress.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/Print.cpp.o
+Archiving .pio/build/genuino101/libFrameworkArduinoVariant.a
+Compiling .pio/build/genuino101/FrameworkArduino/RingBuffer.cpp.o
+Indexing .pio/build/genuino101/libFrameworkArduinoVariant.a
+Compiling .pio/build/genuino101/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/UARTClass.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/WInterrupts.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/abi.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/dccm/dccm_alloc.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/error.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/hooks.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/i2c.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/main.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/new.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/printk.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/soc_i2c.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/stdlib_noniso.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring_analog.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring_digital.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring_pulse.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/genuino101/libFrameworkArduino.a
+Indexing .pio/build/genuino101/libFrameworkArduino.a
+Linking .pio/build/genuino101/firmware.elf
+Checking size .pio/build/genuino101/firmware.elf
+Building .pio/build/genuino101/firmware.bin
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+DATA:    [==        ]  18.3% (used 15032 bytes from 81920 bytes)
+PROGRAM: [===       ]  31.3% (used 48732 bytes from 155648 bytes)
+Configuring upload protocol...
+AVAILABLE: script
+CURRENT: upload_protocol = script
+Looking for upload port...
+Auto-detected: /dev/cu.usbmodem14201
+Forcing reset using 1200bps open/close on port /dev/cu.usbmodem14201
+Uploading .pio/build/genuino101/firmware.bin
+arduino101load 2.1.0 - compiled with go1.7.5
+Starting download script...
+Serial Port: /dev/cu.usbmodem14201
+BIN FILE .pio/build/genuino101/firmware.bin
+Waiting for device...
+Device found!
+Verifying BLE version: ATP1BLE00R-1631C4439
+ATTENTION: BLE firmware is being flashed
+DO NOT DISCONNECT THE BOARD
+dfu-util 0.9
+dfu-util: Could not open file /Users/andrewgaitskell/.platformio/packages/tool-arduino101load/firmwares/2.0.0/ble_core.bin for reading: No such file or directory
+
+Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
+Copyright 2010-2016 Tormod Volden and Stefan Schmidt
+This program is Free Software and has ABSOLUTELY NO WARRANTY
+Please report bugs to http://sourceforge.net/p/dfu-util/tickets/
+
+
+exit status 74
+*** [upload] Error 1
+========================= [FAILED] Took 20.39 seconds =========================
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ brew install dfu-util
+Updating Homebrew...
+==> Auto-updated Homebrew!
+Updated 1 tap (homebrew/core).
+==> New Formulae
+crc
+
+==> Installing dependencies for dfu-util: libusb
+==> Installing dfu-util dependency: libusb
+==> Downloading https://homebrew.bintray.com/bottles/libusb-1.0.23.mojave.bottle
+######################################################################## 100.0%
+==> Pouring libusb-1.0.23.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libusb/1.0.23: 29 files, 524.8KB
+==> Installing dfu-util
+==> Downloading https://homebrew.bintray.com/bottles/dfu-util-0.9.mojave.bottle.
+######################################################################## 100.0%
+==> Pouring dfu-util-0.9.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/dfu-util/0.9: 11 files, 115.7KB
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --target upload
+Processing genuino101 (platform: intel_arc32; board: genuino101; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/intel_arc32/genuino101.html
+PLATFORM: Intel ARC32 1.2.4 > Arduino/Genuino 101
+HARDWARE: ARCV2EM 32MHz, 80KB RAM, 152KB Flash
+PACKAGES: toolchain-intelarc32 1.40805.0 (4.8.5), framework-arduinointel 1.20002.0 (2.0.2), tool-arduino101load 1.201.0 (2.1)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 12 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Checking size .pio/build/genuino101/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+DATA:    [==        ]  18.3% (used 15032 bytes from 81920 bytes)
+PROGRAM: [===       ]  31.3% (used 48732 bytes from 155648 bytes)
+Configuring upload protocol...
+AVAILABLE: script
+CURRENT: upload_protocol = script
+Looking for upload port...
+Error: Please specify `upload_port` for environment or use global `--upload-port` option.
+For some development platforms it can be a USB flash drive (i.e. /media/<user>/<device name>)
+*** [upload] Explicit exit, status 1
+========================== [FAILED] Took 0.96 seconds ==========================
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --target upload-port
+Processing genuino101 (platform: intel_arc32; board: genuino101; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/intel_arc32/genuino101.html
+PLATFORM: Intel ARC32 1.2.4 > Arduino/Genuino 101
+HARDWARE: ARCV2EM 32MHz, 80KB RAM, 152KB Flash
+PACKAGES: toolchain-intelarc32 1.40805.0 (4.8.5), framework-arduinointel 1.20002.0 (2.0.2), tool-arduino101load 1.201.0 (2.1)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 12 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+*** Do not know how to make File target `upload-port' (/Users/andrewgaitskell/platformio/GEN101_1/upload-port).  Stop.
+========================== [FAILED] Took 0.57 seconds ==========================
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --target upload
+Processing genuino101 (platform: intel_arc32; board: genuino101; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/intel_arc32/genuino101.html
+PLATFORM: Intel ARC32 1.2.4 > Arduino/Genuino 101
+HARDWARE: ARCV2EM 32MHz, 80KB RAM, 152KB Flash
+PACKAGES: toolchain-intelarc32 1.40805.0 (4.8.5), framework-arduinointel 1.20002.0 (2.0.2), tool-arduino101load 1.201.0 (2.1)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 12 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Checking size .pio/build/genuino101/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+DATA:    [==        ]  18.3% (used 15032 bytes from 81920 bytes)
+PROGRAM: [===       ]  31.3% (used 48732 bytes from 155648 bytes)
+Configuring upload protocol...
+AVAILABLE: script
+CURRENT: upload_protocol = script
+Looking for upload port...
+Error: Please specify `upload_port` for environment or use global `--upload-port` option.
+For some development platforms it can be a USB flash drive (i.e. /media/<user>/<device name>)
+*** [upload] Explicit exit, status 1
+========================== [FAILED] Took 0.78 seconds ==========================
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio device list
+/dev/cu.Bluetooth-Incoming-Port
+-------------------------------
+Hardware ID: n/a
+Description: n/a
+
+
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio device list --serial
+/dev/cu.Bluetooth-Incoming-Port
+-------------------------------
+Hardware ID: n/a
+Description: n/a
+
+
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ lusb
+-bash: lusb: command not found
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --target upload
+Processing genuino101 (platform: intel_arc32; board: genuino101; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/intel_arc32/genuino101.html
+PLATFORM: Intel ARC32 1.2.4 > Arduino/Genuino 101
+HARDWARE: ARCV2EM 32MHz, 80KB RAM, 152KB Flash
+PACKAGES: toolchain-intelarc32 1.40805.0 (4.8.5), framework-arduinointel 1.20002.0 (2.0.2), tool-arduino101load 1.201.0 (2.1)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 12 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Checking size .pio/build/genuino101/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+DATA:    [==        ]  18.3% (used 15032 bytes from 81920 bytes)
+PROGRAM: [===       ]  31.3% (used 48732 bytes from 155648 bytes)
+Configuring upload protocol...
+AVAILABLE: script
+CURRENT: upload_protocol = script
+Looking for upload port...
+Error: Please specify `upload_port` for environment or use global `--upload-port` option.
+For some development platforms it can be a USB flash drive (i.e. /media/<user>/<device name>)
+*** [upload] Explicit exit, status 1
+========================== [FAILED] Took 1.57 seconds ==========================
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run
+Processing genuino101 (platform: intel_arc32; board: genuino101; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/intel_arc32/genuino101.html
+PLATFORM: Intel ARC32 1.2.4 > Arduino/Genuino 101
+HARDWARE: ARCV2EM 32MHz, 80KB RAM, 152KB Flash
+PACKAGES: toolchain-intelarc32 1.40805.0 (4.8.5), framework-arduinointel 1.20002.0 (2.0.2)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 12 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Checking size .pio/build/genuino101/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+DATA:    [==        ]  18.3% (used 15032 bytes from 81920 bytes)
+PROGRAM: [===       ]  31.3% (used 48732 bytes from 155648 bytes)
+========================= [SUCCESS] Took 1.35 seconds =========================
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run -upload
+Usage: platformio run [OPTIONS]
+Try "platformio run -h" for help.
+
+Error: no such option: -u
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --upload
+Usage: platformio run [OPTIONS]
+Try "platformio run -h" for help.
+
+Error: no such option: --upload  Did you mean --upload-port?
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --upload-port
+Error: --upload-port option requires an argument
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --target upload
+Processing genuino101 (platform: intel_arc32; board: genuino101; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/intel_arc32/genuino101.html
+PLATFORM: Intel ARC32 1.2.4 > Arduino/Genuino 101
+HARDWARE: ARCV2EM 32MHz, 80KB RAM, 152KB Flash
+PACKAGES: toolchain-intelarc32 1.40805.0 (4.8.5), framework-arduinointel 1.20002.0 (2.0.2), tool-arduino101load 1.201.0 (2.1)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 12 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Checking size .pio/build/genuino101/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+DATA:    [==        ]  18.3% (used 15032 bytes from 81920 bytes)
+PROGRAM: [===       ]  31.3% (used 48732 bytes from 155648 bytes)
+Configuring upload protocol...
+AVAILABLE: script
+CURRENT: upload_protocol = script
+Looking for upload port...
+Error: Please specify `upload_port` for environment or use global `--upload-port` option.
+For some development platforms it can be a USB flash drive (i.e. /media/<user>/<device name>)
+*** [upload] Explicit exit, status 1
+========================== [FAILED] Took 0.74 seconds ==========================
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ system_profiler SPUSBDataType
+2019-12-16 11:46:01.880 system_profiler[4036:74935] SPUSBDevice: IOCreatePlugInInterfaceForService failed 0xe00002be
+USB:
+
+    USB 3.0 Bus:
+
+      Host Controller Driver: AppleUSBXHCILPT
+      PCI Device ID: 0x9c31 
+      PCI Revision ID: 0x0004 
+      PCI Vendor ID: 0x8086 
+
+        BRCM20702 Hub:
+
+          Product ID: 0x4500
+          Vendor ID: 0x0a5c  (Broadcom Corp.)
+          Version: 1.00
+          Speed: Up to 12 Mb/sec
+          Manufacturer: Apple Inc.
+          Location ID: 0x14300000 / 4
+          Current Available (mA): 500
+          Current Required (mA): 94
+          Extra Operating Current (mA): 0
+          Built-In: Yes
+
+            Bluetooth USB Host Controller:
+
+              Product ID: 0x828f
+              Vendor ID: 0x05ac (Apple Inc.)
+              Version: 1.50
+              Manufacturer: Apple Inc.
+              Location ID: 0x14330000
+
+        GENUINO 101:
+
+          Product ID: 0x0aba
+          Vendor ID: 0x8087  (Intel Corporation)
+          Version: 80.87
+          Serial Number: AE0417EK62702DE
+          Speed: Up to 12 Mb/sec
+          Manufacturer: Intel
+          Location ID: 0x14200000 / 12
+          Current Available (mA): 500
+          Current Required (mA): 100
+          Extra Operating Current (mA): 0
+
+        Hub:
+
+          Product ID: 0x1446
+          Vendor ID: 0x0451  (Texas Instruments)
+          Version: 1.10
+          Speed: Up to 12 Mb/sec
+          Location ID: 0x14100000 / 2
+          Current Available (mA): 500
+          Current Required (mA): 100
+          Extra Operating Current (mA): 0
+
+            Wireless Dongle:
+
+              Product ID: 0x1004
+              Vendor ID: 0x1a81
+              Version: 0.01
+              Speed: Up to 1.5 Mb/sec
+              Manufacturer: G-Tech
+              Location ID: 0x14120000 / 5
+              Current Available (mA): 500
+              Current Required (mA): 98
+              Extra Operating Current (mA): 0
+
+            2.4G Wireless Mouse:
+
+              Product ID: 0x4102
+              Vendor ID: 0x062a  (ProVision Technology, Inc.)
+              Version: 3.21
+              Speed: Up to 12 Mb/sec
+              Manufacturer: MOSART Semi.
+              Location ID: 0x14110000 / 9
+              Current Available (mA): 500
+              Current Required (mA): 100
+              Extra Operating Current (mA): 0
+
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ ls /dev/tty.*
+/dev/tty.Bluetooth-Incoming-Port
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ ls /dev/cu.*
+/dev/cu.Bluetooth-Incoming-Port
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ ls /dev/cu.*
+/dev/cu.Bluetooth-Incoming-Port	/dev/cu.usbmodem14201
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/andrewcgaitskell/GEN101_1
+   b27ade5..e8adfd0  master     -> origin/master
+Updating b27ade5..e8adfd0
+Fast-forward
+ platformio.ini | 1 +
+ 1 file changed, 1 insertion(+)
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ platformio run --target upload
+Processing genuino101 (platform: intel_arc32; board: genuino101; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/intel_arc32/genuino101.html
+PLATFORM: Intel ARC32 1.2.4 > Arduino/Genuino 101
+HARDWARE: ARCV2EM 32MHz, 80KB RAM, 152KB Flash
+PACKAGES: toolchain-intelarc32 1.40805.0 (4.8.5), framework-arduinointel 1.20002.0 (2.0.2), tool-arduino101load 1.201.0 (2.1)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 12 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Compiling .pio/build/genuino101/src/main.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduinoVariant/variant.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/CDCSerialClass.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/IPAddress.cpp.o
+Archiving .pio/build/genuino101/libFrameworkArduinoVariant.a
+Indexing .pio/build/genuino101/libFrameworkArduinoVariant.a
+Compiling .pio/build/genuino101/FrameworkArduino/Print.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/RingBuffer.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/UARTClass.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/WInterrupts.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/abi.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/dccm/dccm_alloc.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/error.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/hooks.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/i2c.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/main.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/new.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/printk.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/soc_i2c.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/stdlib_noniso.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring_analog.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring_digital.c.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring_pulse.cpp.o
+Compiling .pio/build/genuino101/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/genuino101/libFrameworkArduino.a
+Indexing .pio/build/genuino101/libFrameworkArduino.a
+Linking .pio/build/genuino101/firmware.elf
+Building .pio/build/genuino101/firmware.bin
+Checking size .pio/build/genuino101/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+DATA:    [==        ]  18.3% (used 15032 bytes from 81920 bytes)
+PROGRAM: [===       ]  31.3% (used 48732 bytes from 155648 bytes)
+Configuring upload protocol...
+AVAILABLE: script
+CURRENT: upload_protocol = script
+Looking for upload port...
+Use manually specified: /dev/cu.usbmodem14201
+Forcing reset using 1200bps open/close on port /dev/cu.usbmodem14201
+Uploading .pio/build/genuino101/firmware.bin
+arduino101load 2.1.0 - compiled with go1.7.5
+Starting download script...
+Serial Port: /dev/cu.usbmodem14201
+BIN FILE .pio/build/genuino101/firmware.bin
+Waiting for device...
+Device found!
+Verifying BLE version: ATP1BLE00R-1631C4439
+BLE version: verified
+dfu-util 0.9
+
+Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
+Copyright 2010-2016 Tormod Volden and Stefan Schmidt
+dfu-util: Invalid DFU suffix signature
+This program is Free Software and has ABSOLUTELY NO WARRANTY
+dfu-util: A valid DFU suffix will be required in a future dfu-util release!!!
+Please report bugs to http://sourceforge.net/p/dfu-util/tickets/
+
+Opening DFU capable USB device...
+ID 8087:0aba
+Run-time device DFU version 0011
+Claiming USB DFU Interface...
+Setting Alternate Setting #7 ...
+Determining device status: state = dfuDNLOAD-IDLE, status = 0
+aborting previous incomplete transfer
+Determining device status: state = dfuIDLE, status = 0
+dfuIDLE, continuing
+DFU mode device DFU version 0011
+Device returned transfer size 2048
+Copying data from PC to DFU device
+
+Download	[                         ]   0%            0 bytes
+Download	[=                        ]   4%         2048 bytes
+Download	[==                       ]   8%         4096 bytes
+Download	[===                      ]  12%         6144 bytes
+Download	[====                     ]  16%         8192 bytes
+Download	[=====                    ]  20%        10240 bytes
+Download	[======                   ]  24%        12288 bytes
+Download	[=======                  ]  28%        14336 bytes
+Download	[========                 ]  32%        16384 bytes
+Download	[=========                ]  36%        18432 bytes
+Download	[==========               ]  40%        20480 bytes
+Download	[===========              ]  44%        22528 bytes
+Download	[============             ]  48%        24576 bytes
+Download	[=============            ]  52%        26624 bytes
+Download	[==============           ]  56%        28672 bytes
+Download	[===============          ]  60%        30720 bytes
+Download	[================         ]  64%        32768 bytes
+Download	[=================        ]  68%        34816 bytes
+Download	[==================       ]  72%        36864 bytes
+Download	[===================      ]  76%        38912 bytes
+Download	[====================     ]  80%        40960 bytes
+Download	[=====================    ]  84%        43008 bytes
+Download	[======================   ]  88%        45056 bytes
+Download	[=======================  ]  92%        47104 bytes
+Download	[======================== ]  96%        48732 bytes
+Download	[=========================] 100%        48732 bytes
+Download done.
+Sent a total of 48732 bytes
+state(2) = dfuIDLE, status(0) = No error condition is present
+Done!
+dfu-util: can't detach
+Resetting USB to switch back to runtime mode
+SUCCESS: Sketch will execute in about 5 seconds.
+========================= [SUCCESS] Took 8.04 seconds =========================
+(env) Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ deactivate
+Andrews-MacBook-Air:GEN101_1 andrewgaitskell$ 
